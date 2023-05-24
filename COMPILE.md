@@ -71,16 +71,21 @@ $ ./gradlew compileNatives
 #### x86-64
 
 ```sh
-# docker run --rm -it --platform linux/amd64 -v ./:/build amd64/alpine:3.12 sh
+# docker run --rm -it --platform linux/amd64 amd64/alpine sh
+
 # apk update && apk upgrade
-# apk add git cmake build-base autoconf openjdk8
+# apk add git cmake build-base autoconf openjdk8 wget
+
 # wget https://mirror2.sandyriver.net/pub/software/gnu/automake/automake-1.15.1.tar.gz
 # tar -zxvf automake-1.15.1.tar.gz
 # cd automake-1.15.1
 # ./configure
 # make install
-# cd ../build
-# chmod +x gradlew
+
+# cd ..
+# git clone https://github.com/Walkyst/lavaplayer-natives-fork
+# cd lavaplayer-natives-fork
+# chmod +x ./gradlew
 # ./gradlew load
 # touch natives/opus/opus-1.3/aclocal.m4 configure
 # ./gradlew compileNatives
@@ -89,16 +94,21 @@ $ ./gradlew compileNatives
 #### aaarch64
 
 ```sh
-# docker run --rm -it --platform linux/arm64/v8 -v ./:/build arm64v8/alpine:3.12 sh
+# docker run --rm -it --platform linux/arm64/v8 arm64v8/alpine sh
+
 # apk update && apk upgrade
-# apk add git cmake build-base autoconf openjdk8
+# apk add git cmake build-base autoconf openjdk8 wget
+
 # wget https://mirror2.sandyriver.net/pub/software/gnu/automake/automake-1.15.1.tar.gz
 # tar -zxvf automake-1.15.1.tar.gz
 # cd automake-1.15.1
 # ./configure
 # make install
-# cd ../build
-# chmod +x gradlew
+
+# cd ..
+# git clone https://github.com/Walkyst/lavaplayer-natives-fork
+# cd lavaplayer-natives-fork
+# chmod +x ./gradlew
 # ./gradlew load
 # touch natives/opus/opus-1.3/aclocal.m4 configure
 # ./gradlew compileNatives
